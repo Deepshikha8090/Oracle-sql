@@ -14,27 +14,27 @@ INSERT INTO EMPLOYEE(ID,F_NAME,L_NAME,DEPT,SALARY,DOJ,ADDRESS,MARRIED)VALUES(4,�
 INSERT INTO EMPLOYEE(ID,F_NAME,L_NAME,DEPT,SALARY,DOJ,ADDRESS,MARRIED)VALUES(5,’ROHAN’,’SHARMA’,’CS’,21000,’18-SEP-2005’,’GHAZIABAD’,NULL);
 INSERT INTO EMPLOYEE(ID,F_NAME,L_NAME,DEPT,SALARY,DOJ,ADDRESS,MARRIED)VALUES(6,’ROBIN’,’SINGH’,’IT’,18000,’22-OCT-2021’,’MEERUT’,’N’);
 INSERT INTO EMPLOYEE(ID,F_NAME,L_NAME,DEPT,SALARY,DOJ,ADDRESS,MARRIED)VALUES(7,’AKASH’,’RANJAN’,’CS’,22000,’14-NOV-2019’,’GHAZIABAD’,NULL);
-SELECT * FROM EMPLOYEE WHERE ADDRESS=’GHAZIABAD’;             //Find the employee details who are from Ghaziabad.
-SELECT DEPT FROM EMPLOYEE;                                  //Find the Department names.
-SELECT ID,F_NAME||’ ‘||L_NAME AS “COMPLETE_NAME”,DEPT FROM EMPLOYEE;    //List the employee id, complete name and the department of all the employees
-SELECT F_NAME||’ ’||’IS WORKING IN’||’ ‘||DEPT FROM EMPLOYEE;    //List all the employees’ first name  along with the department name.( Note the result should be displayed as “ Vinay is working in MCA Department”.)
-SELECT NAMES FROM EMPLOYEE WHERE DOJ>’15-JAN-2005’;            //Display the employee names who joined after 15-01-2005.
-UPDATE TABLE EMPLOYEE                                          //Update the salary of employee to 25000 whose employee id is 2 .
+SELECT * FROM EMPLOYEE WHERE ADDRESS=’GHAZIABAD’;             --Find the employee details who are from Ghaziabad.
+SELECT DEPT FROM EMPLOYEE;                                  --Find the Department names.
+SELECT ID,F_NAME||’ ‘||L_NAME AS “COMPLETE_NAME”,DEPT FROM EMPLOYEE;    --List the employee id, complete name and the department of all the employees
+SELECT F_NAME||’ ’||’IS WORKING IN’||’ ‘||DEPT FROM EMPLOYEE;    --List all the employees’ first name  along with the department name.( Note the result should be displayed as “ Vinay is working in MCA Department”.)
+SELECT NAMES FROM EMPLOYEE WHERE DOJ>’15-JAN-2005’;            --Display the employee names who joined after 15-01-2005.
+UPDATE TABLE EMPLOYEE                                          --Update the salary of employee to 25000 whose employee id is 2 .
 SET SALARY=25000
 WHERE ID=2;
-SELECT ID, F_NAME||’’||L-NAME AS “NAME”,12*SALARY AS “ANNUAL SALARY” FROM EMPLOYEE;     //Display the employee id, name and Annual salary of all the employees. The column name showing annual salary should be “Annual Salary”.
-SELECT * FROM EMPLOYEE WHERE SALARY BETWEEN 15000 AND 30000;                          //List the employee details who are getting salary between 15000 and 30000.
-SELECT * FROM EMPLOYEE WHERE DOJ BETWEEN ’27-SEP-2001’ AND ’12-FEB-2019’;             //List the employee details who joined between 27-09-2001 and 12-02-2019
-SELECT * FROM EMPLOYEE WHERE DEPT IN(‘MCA’,’CS’);                                   //List the employees who works in MCA , CS Department
-SELECT * FROM EMPLOYEE WHERE DEPT<>’MCA’;                                              //List the employees who are not working in MCA department.
-SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘R%’;                                          //List the employees whose first name starts with ‘R’.
-SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘RO%’;                                         //List the employees whose first name starts with ‘Ro’.
-SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘R____’;                                       //List the employees whose first name must be 5 character long and starts with ‘R’.
-SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘_O%’;                                   //List the employees whose first name where the 2nd character must be ‘o’.
-SELECT * FROM EMPLOYEE WHERE MARRIED=’Y’;       //List the employees who are married.
-SELECT * FROM EMPLOYEE WHERE MARRIED =’N’;            //List the employees who are unmarried.
-SELECT * FROM EMPLOYEE WHERE MARRIED=NULL;          //List the employees whose marriage status is not known.
-SELECT * FROM EMPLOYEE WHERE DEPT =’MCA’ AND MARRIED =’Y’;        //List the employees who belongs to MCA department and are married 
+SELECT ID, F_NAME||’’||L-NAME AS “NAME”,12*SALARY AS “ANNUAL SALARY” FROM EMPLOYEE;     --Display the employee id, name and Annual salary of all the employees. The column name showing annual salary should be “Annual Salary”.
+SELECT * FROM EMPLOYEE WHERE SALARY BETWEEN 15000 AND 30000;                          --List the employee details who are getting salary between 15000 and 30000.
+SELECT * FROM EMPLOYEE WHERE DOJ BETWEEN ’27-SEP-2001’ AND ’12-FEB-2019’;             --List the employee details who joined between 27-09-2001 and 12-02-2019
+SELECT * FROM EMPLOYEE WHERE DEPT IN(‘MCA’,’CS’);                                   --List the employees who works in MCA , CS Department
+SELECT * FROM EMPLOYEE WHERE DEPT<>’MCA’;                                              --List the employees who are not working in MCA department.
+SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘R%’;                                          --List the employees whose first name starts with ‘R’.
+SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘RO%’;                                         --List the employees whose first name starts with ‘Ro’.
+SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘R____’;                                       --List the employees whose first name must be 5 character long and starts with ‘R’.
+SELECT * FROM EMPLOYEE WHERE F_NAME LIKE ‘_O%’;                                   --List the employees whose first name where the 2nd character must be ‘o’.
+SELECT * FROM EMPLOYEE WHERE MARRIED=’Y’;       --List the employees who are married.
+SELECT * FROM EMPLOYEE WHERE MARRIED =’N’;            --List the employees who are unmarried.
+SELECT * FROM EMPLOYEE WHERE MARRIED=NULL;          --List the employees whose marriage status is not known.
+SELECT * FROM EMPLOYEE WHERE DEPT =’MCA’ AND MARRIED =’Y’;        --List the employees who belongs to MCA department and are married 
 
 
 
