@@ -1,0 +1,40 @@
+CREATE table student
+(
+Roll NUMBER(5),
+FName Varchar(15),
+MName Varchar(15),
+LName Varchar(15),
+Sec Varchar(15),
+City Varchar(15),
+Area Varchar(15),
+HouseNo VARCHAR(9),
+Div Number(4)
+);
+INSERT into student
+values(1,'Akash','kumar','Jian','A','Ghaziabad','Rakesh Marg','C-355',1);
+INSERT into student
+values(2,'Manav','Mohan','Sharma','A','Ghaziabad','Raj nagar','D-211',2);
+INSERT into student
+values(3,'Chandra','Mohan','Batra','B','Meerut','Minto Road','A-201',3);
+INSERT into student
+values(4,'Prashant','kumar','Jian','A','Meerut','Rakesh Marg','C-355',NULL);
+INSERT into student
+values(5,'Akash','kumar','Jian','A','Kanpur','Rakesh Marg','C-355',1);
+
+select * from student
+
+
+select Roll,FName||' '||MName||' '||LName AS Name,HouseNO||' '||Area||' '||City AS Address from student
+
+select roll,concat(substr(FName,1,1),'.')||concat(substr(Mname,1,1),' ')||Lname AS Name from student        //Name should be displayed as A.K jain
+
+select * from student                                                                         //Display all the student information according to ascending order of Section
+order by Sec;
+
+SELECT FName from student where div is null                               //Display those student details whose division has not been awarded
+select Fname,city from student                                            //Display the cities from where the students are from
+
+select Fname from student                                                 
+where Fname like 'M_n__%';
+
+select lower(Fname)from student
