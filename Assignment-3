@@ -1,0 +1,41 @@
+CREATE TABLE PRODUCT_MASTER(ProductNo varchar2(6),
+Description varchar2(15),
+Profitpercent Number(4,2),
+Unitmeasure varchar2(10),
+Qtyonhand Number(8),
+Reorderlvl Number(8,2),
+Sellprice Number(8,2),
+Costprice Number(8,2));
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P00001’,’1.44floppies’,5,’Piece’,200,50,350,250);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P03453’,’Monitors’,6,’Piece’,150,50,500,350);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P06734’,’Mouse’,5,’Piece’,100,20,600,450);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P07865’,’1.22floppies’,5,’Piece’,100,20,750,500);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P07868’,’Keyboards’,2,’Piece’,150,50,850,550);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P07885’,’CDDrive’,2.5,’Piece’,80,30,700,450);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P07965’,’540 HDD’,4,’Piece’,100,40,350,250);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P07975’,’1.44Drive,5,’Piece’,70,30,300,175);
+INSERT INTO PRODUCT_MASTER(ProductNo,Description,Profitpercent,Unitmeasure,Qtyonhand,Reorderlvl,Sellprice,Costprice)VALUES(‘P08865’,’1.22Drive’,5,’Piece’,75,30,450,300);
+SELECT Name from CLIENT_MASTER;                                         --Find out the names of all the clients.
+SELECT Name , City from CLIENT_MASTER;                                   --Retrieve the list of names and cities of all the clients.
+SELET * from CLIENT_MASTER where City=’Bombay’;                     --List all the clients who are located in Bombay.
+SELECT * from CLIENT_MASTER where Clientno=’C00001’ AND Clientno=’C00002’;      --Display the information for client no C00001 and C 00002.
+SELECT * from PRODUCT_MASTER where Description=’1.44Drive’ AND Description=’1.22Drive’;         --Find the products with description as ‘1.44 Drive’ and ‘1.22 Drive’.
+SELECT *from PRODUCT_MASTER where Sellprice>5000;                   --Find all the products whose sell price is greater than 5000.
+SELECT * from CLIENT_MASTER where City IN (’Bombay’ , ’Madras’, ’Delhi’);                 --Find the list of all clients who stay in city ‘Bombay’ or city ‘Delhi’ or ‘Madras’.
+SELECT * from PRODUCT_MASTER where sellprice between 2000 and 5000;           --Find the product whose selling price is greater than 2000 and less than or equal to 5000.
+SELECT Name, City, State from CLIENT_MASTER where City <>’Maharashtra’;               --List the name, city and state of clients not in the state of ‘Maharashtra’.
+UPDATE TABLE PRODUCT_MASTER                                       --Change the selling price of ‘1.44 floppy drive’ to Rs.1150.00
+SET Sellprice=1150.00 
+Where Description=’1.44floppydrive’;
+DELETE from CLIENT_MASTER where Clientno=’C00001’;                      --Delete the record with client 0001 from the client_master table.
+SELECT sellprice*15 from PRODUCT_MASTER where Sellprice>1500;           --Find the products whose selling price is more than 1500 and also find the new selling price as original selling price*15.
+SELECT * from CLIENT_MASTER where City Like ‘_a%’;              --Find out the clients who stay in a city whose second letter is a.
+SELECT Name from CLIENT_MASTER where Name Like ‘_a%’;                --Find out the name of all clients having ‘a’ as the second letter in their names.
+SELECT * from PRODUCT_MASTER ORDER By Description;    --List the products in sorted order of their description.
+SELECT COUNT(ProductNo) As “total number of product” from PRODUCT_MASTER;     --Count the total number of product.
+SELECT AVG(Costprice) as “average price” from Product_master;         --Calculate the average price of all the products
+SELECT MIN(Costprice) as “min_price” from PRODUCT_MASTER;                     --Calculate the minimum price of products.
+SELECT MIN(Costprice),MAX(Costprice) as “min_price”,”max_price” from PRODUCT_MASTER;          --Determine the maximum and minimum prices. Rename the tittle as ‘max_price’ and min_price respectively.
+SELECT COUNT(Productno) from PRODUCT_MASTER where Sellprice>=1500;        --Count the number of products having price greater than or equal to 1500
+SELECT * from PRODUCT_MASTER ORDER By Sellprice;                --List the products according to ascending order of their selling price.
+SELECT *from PRODUCT_MASTER ORDER By Sellprice DESC;     --List the products according to descending order of their selling price.
